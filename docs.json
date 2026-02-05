@@ -15,7 +15,11 @@
         "groups": [
           {
             "group": "Старт",
-            "pages": ["index", "quickstart", "roadmap"]
+            "pages": [
+              "index",
+              "quickstart",
+              "roadmap"
+            ]
           },
           {
             "group": "Основы",
@@ -88,16 +92,14 @@
         "groups": [
           {
             "group": "О проекте",
-            "pages": ["development", "essentials/cheatsheets"]
+            "pages": [
+              "development",
+              "essentials/cheatsheets"
+            ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        { "anchor": "Mintlify Docs", "href": "https://mintlify.com/docs", "icon": "book-open-cover" }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
