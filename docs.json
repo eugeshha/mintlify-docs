@@ -109,5 +109,12 @@
     "links": []
   },
   "contextual": { "options": ["copy", "view", "chatgpt", "claude", "cursor", "vscode"] },
-  "footer": { "socials": {} }
+  "footer": {
+    "socials": {}
+  },
+  "errors": {
+    "404": {
+      "redirect": false
+    }
+  }
 }
