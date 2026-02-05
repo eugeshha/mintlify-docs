@@ -1,0 +1,44 @@
+---
+title: "AWS: основы"
+description: "Ключевые сервисы AWS для DevOps-инженера"
+---
+
+## Обзор
+
+AWS — самый распространённый облачный провайдер. Для DevOps важно знать: вычисления (EC2, ECS, EKS), сети (VPC, ALB), хранилище (S3), IAM, и базово — RDS, CloudWatch.
+
+## Ключевые сервисы
+
+<AccordionGroup>
+  <Accordion title="Вычисление">
+    - **EC2** — виртуальные машины; AMI, instance types, security groups
+    - **ECS** — контейнеры без K8s; Fargate — serverless контейнеры
+    - **EKS** — managed Kubernetes
+  </Accordion>
+  <Accordion title="Сеть">
+    - **VPC** — изолированная сеть; subnets, route tables, internet gateway
+    - **ALB/NLB** — балансировщики; target groups
+  </Accordion>
+  <Accordion title="Хранилище">
+    - **S3** — object storage; bucket, ключи, версии, lifecycle
+    - **EBS** — диски к EC2
+  </Accordion>
+  <Accordion title="IAM">
+    - Users, roles, policies; роли для EC2/ECS/EKS и для приложений
+    - Assume role, временные учётные данные
+  </Accordion>
+  <Accordion title="Мониторинг и логи">
+    - **CloudWatch** — метрики, логи, алерты, dashboards
+  </Accordion>
+</AccordionGroup>
+
+## CLI и автоматизация
+
+- **AWS CLI** — `aws s3 ls`, `aws ec2 describe-instances`, настройка профилей и ролей.
+- **Terraform** — провайдер `hashicorp/aws` для создания тех же ресурсов кодом.
+
+## Что добавить сюда
+
+- Свои заметки по типовым сценариям (поднять EC2, настроить EKS, S3 + CloudFront)
+- Ссылки на AWS documentation и Well-Architected
+- Чек-лист по безопасности (не оставлять ключи в коде, least privilege)

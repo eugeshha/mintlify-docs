@@ -1,0 +1,62 @@
+---
+title: "Шпаргалки"
+description: "Краткие справочники по командам и концепциям DevOps"
+---
+
+## Зачем эта страница
+
+Здесь можно собирать **шпаргалки** — короткие списки команд и понятий, к которым удобно возвращаться при практике или перед собеседованием. Ниже — заготовки по темам; дополняй своими примерами.
+
+## Linux / Bash
+
+| Задача | Команда |
+|--------|--------|
+| Поиск по файлам | `grep -r "текст" /path` |
+| Процессы по памяти | `ps aux --sort=-%mem \| head` |
+| Лог в реальном времени | `tail -f /var/log/app.log` |
+| Кто слушает порт | `ss -tlnp \| grep :80` |
+| Права на выполнение | `chmod +x script.sh` |
+
+## Git
+
+| Задача | Команда |
+|--------|--------|
+| Граф коммитов | `git log --oneline --graph -10` |
+| Новая ветка | `git checkout -b feature/name` |
+| Отменить последний коммит | `git reset --soft HEAD~1` |
+| Обновить и перебазировать | `git fetch && git rebase origin/main` |
+
+## Docker
+
+| Задача | Команда |
+|--------|--------|
+| Сборка образа | `docker build -t myapp:1.0 .` |
+| Запуск контейнера | `docker run -d -p 8080:80 myapp:1.0` |
+| Логи | `docker logs -f <container_id>` |
+| Войти в контейнер | `docker exec -it <container_id> sh` |
+| Очистить неиспользуемое | `docker system prune -a` |
+
+## Kubernetes (kubectl)
+
+| Задача | Команда |
+|--------|--------|
+| Поды | `kubectl get pods -A` |
+| Описание ресурса | `kubectl describe pod <name>` |
+| Логи пода | `kubectl logs -f <pod> -n <ns>` |
+| Выполнить в поде | `kubectl exec -it <pod> -- sh` |
+| Применить манифест | `kubectl apply -f deploy.yaml` |
+
+## Terraform
+
+| Задача | Команда |
+|--------|--------|
+| Инициализация | `terraform init` |
+| План | `terraform plan` |
+| Применить | `terraform apply` |
+| Уничтожить | `terraform destroy` |
+
+## Что добавить сюда
+
+- Свои часто используемые команды (AWS CLI, Ansible, Helm)
+- Короткие определения терминов (Pod, Deployment, Service, Ingress)
+- Ссылки на внешние шпаргалки (например, по K8s, Terraform, AWS)

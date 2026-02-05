@@ -1,85 +1,101 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "DevOps: от и до",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0EA5E9",
+    "light": "#38BDF8",
+    "dark": "#0284C7"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Учёба",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Старт",
+            "pages": ["index", "quickstart", "roadmap"]
+          },
+          {
+            "group": "Основы",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "fundamentals/linux",
+              "fundamentals/git",
+              "fundamentals/scripting",
+              "fundamentals/networking"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Контейнеры и оркестрация",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "containers/docker",
+              "containers/kubernetes"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "CI/CD",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "cicd/introduction",
+              "cicd/github-actions",
+              "cicd/gitlab-ci",
+              "cicd/jenkins"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Infrastructure as Code",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "iac/terraform",
+              "iac/ansible"
+            ]
+          },
+          {
+            "group": "Облака",
+            "pages": [
+              "cloud/overview",
+              "cloud/aws-basics",
+              "cloud/k8s-in-cloud"
+            ]
+          },
+          {
+            "group": "Мониторинг и логи",
+            "pages": [
+              "observability/introduction",
+              "observability/prometheus-grafana",
+              "observability/logging"
+            ]
+          },
+          {
+            "group": "Безопасность",
+            "pages": [
+              "security/devsecops",
+              "security/secrets",
+              "security/scanning"
+            ]
+          },
+          {
+            "group": "Карьера",
+            "pages": [
+              "career/role",
+              "career/certifications",
+              "career/interview"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Справка",
         "groups": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "О проекте",
+            "pages": ["development", "essentials/cheatsheets"]
           }
         ]
       }
     ],
     "global": {
       "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
+        { "anchor": "Mintlify Docs", "href": "https://mintlify.com/docs", "icon": "book-open-cover" }
       ]
     }
   },
@@ -88,35 +104,8 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "links": []
   },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
+  "contextual": { "options": ["copy", "view", "chatgpt", "claude", "cursor", "vscode"] },
+  "footer": { "socials": {} }
 }

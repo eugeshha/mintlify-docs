@@ -1,0 +1,39 @@
+---
+title: "Kubernetes в облаке"
+description: "Managed K8s: EKS, GKE, AKS — общие идеи и что важно знать"
+---
+
+## Зачем managed Kubernetes
+
+Поднять K8s самому (control plane, etcd, обновления) — трудоёмко. Облака дают managed-сервисы: они ведут control plane, ты управляешь нодами и workload. Для DevOps важно уметь развернуть кластер, настроить доступ (kubectl, IAM), задеплоить приложение и подключить LB/Ingress.
+
+## Основные сервисы
+
+| Провайдер | Сервис | Особенности |
+|-----------|--------|-------------|
+| AWS | EKS | Интеграция с IAM, ALB Ingress Controller, Fargate для нод |
+| Google | GKE | Автопилот (managed ноды), хорошая интеграция с GCP |
+| Azure | AKS | Интеграция с Entra ID, Azure LB |
+
+## Общие темы
+
+<AccordionGroup>
+  <Accordion title="Создание кластера">
+    Через консоль, CLI (eksctl, gcloud, az) или Terraform. Выбор размера нод, автоскейлинг нод.
+  </Accordion>
+  <Accordion title="Доступ (kubectl)">
+    Настройка kubeconfig; в облаке часто через IAM (AWS), service account (GCP) — без статичных паролей.
+  </Accordion>
+  <Accordion title="Сеть и Ingress">
+    Load Balancer сервис → облачный LB; Ingress controller (ALB, nginx) и TLS.
+  </Accordion>
+  <Accordion title="Секреты и конфигурация">
+    Использование облачных секретов (Secrets Manager, etc.) и синхронизация в K8s (External Secrets, CSI).
+  </Accordion>
+</AccordionGroup>
+
+## Что добавить сюда
+
+- Пошаговый сценарий: кластер в одном из облаков + деплой приложения + Ingress
+- Сравнение стоимости и фич EKS / GKE / AKS под свои задачи
+- Ссылки на официальные гайды провайдеров

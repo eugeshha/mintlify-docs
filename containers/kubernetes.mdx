@@ -1,0 +1,76 @@
+---
+title: "Kubernetes"
+description: "Оркестрация контейнеров: Pods, Deployments, Services, Ingress, Helm"
+---
+
+## Зачем Kubernetes в DevOps
+
+Kubernetes (K8s) — стандарт де-факто для запуска контейнеров в продакшене: масштабирование, отказоустойчивость, деплой без даунтайма. Понимание K8s нужно почти на любом DevOps-проекте.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Кластер и kubectl">
+    - Компоненты: control plane, nodes, kubelet, API server
+    - `kubectl`: get, describe, logs, exec; контексты и namespaces
+  </Accordion>
+  <Accordion title="Рабочие нагрузки">
+    - **Pod** — минимальная единица; один или несколько контейнеров
+    - **Deployment** — желаемое состояние, реплики, rolling update
+    - **StatefulSet**, **DaemonSet** — когда использовать
+  </Accordion>
+  <Accordion title="Сеть в кластере">
+    - **Service**: ClusterIP, NodePort, LoadBalancer
+    - **Ingress** — маршрутизация HTTP/HTTPS, TLS
+  </Accordion>
+  <Accordion title="Конфигурация и секреты">
+    - **ConfigMap** и **Secret** — как подключать в поды
+    - Переменные окружения и смонтированные файлы
+  </Accordion>
+  <Accordion title="Helm и чарты">
+    - Шаблонизация манифестов, values, релизы
+    - Установка чартов: `helm install`, `upgrade`, `rollback`
+  </Accordion>
+</AccordionGroup>
+
+## Минимальный Deployment + Service
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: app
+          image: my-registry/my-app:1.0
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app
+spec:
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: ClusterIP
+```
+
+## Что добавить сюда
+
+- Свои манифесты и Helm-чарты
+- Заметки по managed K8s (EKS, GKE, AKS)
+- Ссылки: официальная документация, Kubernetes The Hard Way, практики

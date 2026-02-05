@@ -1,0 +1,60 @@
+---
+title: "Linux"
+description: "Основы Linux для DevOps: CLI, файловая система, процессы, права, systemd"
+---
+
+## Зачем Linux в DevOps
+
+Почти все серверы, контейнеры и облачные инстансы работают под Linux. Умение уверенно работать в терминале, искать логи, настраивать сервисы и права — обязательная база.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Файловая система и навигация">
+    - Структура каталогов: `/`, `/etc`, `/var`, `/home`, `/tmp`
+    - Команды: `pwd`, `cd`, `ls`, `find`, `which`
+    - Пути абсолютные и относительные, симлинки (`ln -s`)
+  </Accordion>
+  <Accordion title="Файлы и права">
+    - Чтение/запись/выполнение: `chmod`, `chown`, `chgrp`
+    - Просмотр и редактирование: `cat`, `less`, `head`, `tail`, `grep`, `vim`/`nano`
+    - Поиск по содержимому: `grep`, `find -exec`
+  </Accordion>
+  <Accordion title="Процессы и ресурсы">
+    - `ps`, `top`, `htop` — процессы и нагрузка
+    - `kill`, `killall`, сигналы (SIGTERM, SIGKILL)
+    - Память и диск: `free`, `df`, `du`
+  </Accordion>
+  <Accordion title="Сеть из CLI">
+    - `curl`, `wget`, `nc` (netcat)
+    - `ss`, `netstat` — порты и соединения
+    - `ping`, `traceroute`, `dig`/`nslookup`
+  </Accordion>
+  <Accordion title="systemd">
+    - Юниты: `systemctl start|stop|restart|status|enable`
+    - Журнал: `journalctl -u service-name -f`
+    - Создание простого unit-файла
+  </Accordion>
+</AccordionGroup>
+
+## Полезные однострочники
+
+```bash
+# Поиск файлов по имени
+find /var -name "*.log" 2>/dev/null
+
+# Топ процессов по памяти
+ps aux --sort=-%mem | head -10
+
+# Следить за логом в реальном времени
+tail -f /var/log/syslog
+
+# Проверить, кто слушает порт 80
+ss -tlnp | grep :80
+```
+
+## Что добавить сюда
+
+- Свои заметки по дистрибутивам (Ubuntu, CentOS, Alpine)
+- Частые ошибки и как их искать в логах
+- Ссылки на курсы/доки (например, Linux Journey, man-страницы)

@@ -1,0 +1,53 @@
+---
+title: "Ansible"
+description: "Конфигурация и деплой как код: playbooks, роли, инвентарь"
+---
+
+## Зачем Ansible
+
+Ansible — инструмент конфигурации и автоматизации: установка пакетов, настройка сервисов, деплой приложений на множество хостов. Без агентов (работа по SSH), конфиг — YAML (playbooks, roles). Часто используют вместе с Terraform: Terraform создаёт инфраструктуру, Ansible настраивает ОС и софт.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Инвентарь">
+    - Список хостов: `inventory` (ini, yaml); группы; переменные по группе/хосту.
+  </Accordion>
+  <Accordion title="Playbook и задачи">
+    - Play: хосты, роли или tasks; task: модуль (apt, copy, template, service) + параметры.
+    - `ansible-playbook -i inventory playbook.yml`
+  </Accordion>
+  <Accordion title="Роли">
+    - Структура: tasks, handlers, templates, vars, defaults; переиспользование через roles:.
+  </Accordion>
+  <Accordion title="Модули">
+    - Управление пакетами, файлами, шаблонами (Jinja2), сервисами, пользователями; idempotency.
+  </Accordion>
+  <Accordion title="Секреты">
+    - Ansible Vault для шифрования переменных и файлов; использование в CI.
+  </Accordion>
+</AccordionGroup>
+
+## Пример playbook
+
+```yaml
+- name: Setup web server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+    - name: Enable and start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+```
+
+## Что добавить сюда
+
+- Свои роли (базовый сервер, Docker, мониторинг)
+- Инвентарь для тест/прод
+- Ссылки на документацию и Ansible Galaxy

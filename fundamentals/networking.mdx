@@ -1,0 +1,55 @@
+---
+title: "Сети"
+description: "Основы сетей для DevOps: TCP/IP, DNS, HTTP, порты, firewall"
+---
+
+## Зачем сети в DevOps
+
+Нужно понимать, как сервисы доходят друг до друга, как настроить ingress/load balancer, почему «не открывается порт» и как читать трафик в логах. Без базовой сетевой модели сложно дебажить деплой и мониторинг.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Модель TCP/IP">
+    - Уровни: приложение (HTTP, DNS), транспорт (TCP/UDP), сеть (IP), канал
+    - IP-адреса, подсети, маска, CIDR
+  </Accordion>
+  <Accordion title="Порты и протоколы">
+    - Порт как адрес приложения; 80/443 (HTTP/HTTPS), 22 (SSH), 53 (DNS)
+    - TCP vs UDP: надёжность и задержка
+  </Accordion>
+  <Accordion title="DNS">
+    - Разрешение имён в IP: A, AAAA, CNAME
+    - `dig`, `nslookup`; кэш и TTL
+  </Accordion>
+  <Accordion title="HTTP/HTTPS">
+    - Методы, коды ответа, заголовки
+    - TLS: сертификаты, доверие
+  </Accordion>
+  <Accordion title="Firewall и безопасность">
+    - iptables/nftables основы; разрешить/запретить порты
+    - Security groups в облаке
+  </Accordion>
+</AccordionGroup>
+
+## Полезные команды
+
+```bash
+# Проверить доступность порта
+nc -zv host 443
+
+# Разрешить имя в IP
+dig +short example.com
+
+# Посмотреть маршрут до хоста
+traceroute example.com
+
+# Только заголовки ответа
+curl -I https://example.com
+```
+
+## Что добавить сюда
+
+- Схемы своей инфраструктуры (какие порты между сервисами)
+- Заметки по Load Balancer и Ingress в K8s
+- Ссылки на курсы (например, CCNA basics, облачные сети)

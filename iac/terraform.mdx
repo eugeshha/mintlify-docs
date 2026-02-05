@@ -1,0 +1,55 @@
+---
+title: "Terraform"
+description: "Infrastructure as Code: провайдеры, state, модули, практики"
+---
+
+## Зачем Terraform
+
+Terraform (HashiCorp) описывает инфраструктуру в декларативном HCL: серверы, сети, базы, K8s-кластеры в облаке или on-prem. Один конфиг — воспроизводимое окружение; изменения через `plan`/`apply`, история в state.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Основы">
+    - Провайдеры (AWS, GCP, Azure, Kubernetes, Docker и др.)
+    - Ресурсы: `resource "aws_instance" "web" { ... }`
+    - `terraform init`, `plan`, `apply`, `destroy`
+  </Accordion>
+  <Accordion title="State">
+    - Где хранится state (локально, S3 + DynamoDB, Terraform Cloud)
+    - Блокировка, версионирование state-файла
+  </Accordion>
+  <Accordion title="Переменные и выводы">
+    - `variable`, `output`; передача через `-var`, tfvars, env (TF_VAR_*).
+  </Accordion>
+  <Accordion title="Модули">
+    - Переиспользуемые куски конфига; source (local, registry, Git).
+  </Accordion>
+  <Accordion title="Практики">
+    - Разделение по окружениям (workspaces или папки); секреты не в коде; код-ревью изменений плана.
+  </Accordion>
+</AccordionGroup>
+
+## Минимальный пример (AWS EC2)
+
+```hcl
+terraform {
+  required_providers {
+    aws = { source = "hashicorp/aws", version = "~> 5.0" }
+  }
+}
+provider "aws" {
+  region = var.region
+}
+resource "aws_instance" "app" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+  tags = { Name = "my-app" }
+}
+```
+
+## Что добавить сюда
+
+- Свои модули (VPC, EKS, RDS и т.д.)
+- Настройка remote state и CI (plan/apply в пайплайне)
+- Ссылки на доки и best practices (terraform-docs, tflint)

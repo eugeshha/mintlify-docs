@@ -1,0 +1,53 @@
+---
+title: "Docker"
+description: "Контейнеры: образы, Dockerfile, docker-compose, registry"
+---
+
+## Зачем Docker в DevOps
+
+Контейнеры дают единый формат упаковки приложения и зависимостей. Один образ работает на ноутбуке, в CI и в облаке. Docker — базовый инструмент; Kubernetes потом запускает эти же образы в кластере.
+
+## Ключевые темы
+
+<AccordionGroup>
+  <Accordion title="Образы и контейнеры">
+    - Образ vs контейнер; слои и кэш
+    - `docker pull`, `docker run`, `docker ps`, `docker logs`, `docker exec`
+    - Остановка и удаление: `stop`, `rm`, `rmi`, `prune`
+  </Accordion>
+  <Accordion title="Dockerfile">
+    - `FROM`, `WORKDIR`, `COPY`, `RUN`, `CMD`, `ENTRYPOINT`
+    - Многостадийная сборка (multi-stage) для меньшего образа
+    - Best practices: минимальный базовый образ, один процесс на контейнер
+  </Accordion>
+  <Accordion title="Сети и тома">
+    - Сети: bridge, host; `docker network`
+    - Тома и bind mount: персистентные данные
+  </Accordion>
+  <Accordion title="Docker Compose">
+    - `docker-compose.yml`: сервисы, порты, volumes, сети
+    - `up`, `down`, `logs`, использование в разработке и тестах
+  </Accordion>
+  <Accordion title="Registry">
+    - Push/pull в Docker Hub, GitLab Registry, ECR, GCR
+    - Теги: `latest`, семантические версии
+  </Accordion>
+</AccordionGroup>
+
+## Пример минимального Dockerfile
+
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+EXPOSE 3000
+CMD ["node", "index.js"]
+```
+
+## Что добавить сюда
+
+- Свои Dockerfile для типовых стеков (Node, Python, Go)
+- Примеры docker-compose для локальной разработки
+- Ссылки на официальную доку и Docker Best Practices

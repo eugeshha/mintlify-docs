@@ -1,97 +1,66 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "DevOps: от и до"
+description: "Личная документация для обучения профессии DevOps-инженера — всё необходимое от основ до продвинутых тем"
 ---
 
-## Setting up
+## Зачем эта дока
 
-Get your documentation site up and running in minutes.
+Здесь собрано всё, что нужно, чтобы **самостоятельно выйти на уровень DevOps-инженера**: от Linux и Git до Kubernetes, CI/CD, облаков и мониторинга. Материал структурирован как последовательный путь обучения — можно идти по порядку или прыгать по разделам.
 
 <Card
-  title="Start here"
+  title="С чего начать"
   icon="rocket"
   href="/quickstart"
   horizontal
 >
-  Follow our three step quickstart guide.
+  Как пользоваться этой докой и в каком порядке проходить темы.
 </Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
 
 <Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
+  title="Дорожная карта"
+  icon="map"
+  href="/roadmap"
+  horizontal
 >
-  Browse our showcase of exceptional documentation sites.
+  Визуальный путь от основ до продвинутых тем и карьеры.
 </Card>
+
+## Что внутри
+
+<Columns cols={2}>
+  <Card title="Основы" icon="layer-group" href="/fundamentals/linux">
+    Linux, Git, скрипты (Bash/Python), основы сетей — фундамент для всего остального.
+  </Card>
+  <Card title="Контейнеры" icon="box" href="/containers/docker">
+    Docker и Kubernetes: упаковка приложений и оркестрация в кластере.
+  </Card>
+  <Card title="CI/CD" icon="arrows-rotate" href="/cicd/introduction">
+    Автоматизация сборки, тестов и деплоя: GitHub Actions, GitLab CI, Jenkins.
+  </Card>
+  <Card title="Infrastructure as Code" icon="code" href="/iac/terraform">
+    Terraform и Ansible: инфраструктура и конфигурация как код.
+  </Card>
+  <Card title="Облака" icon="cloud" href="/cloud/overview">
+    AWS и другие облака, запуск K8s в облаке, облачно-нативные практики.
+  </Card>
+  <Card title="Мониторинг и логи" icon="chart-line" href="/observability/introduction">
+    Метрики, алерты, логи: Prometheus, Grafana, централизованное логирование.
+  </Card>
+  <Card title="Безопасность" icon="shield-halved" href="/security/devsecops">
+    DevSecOps, секреты, сканирование образов и кода.
+  </Card>
+  <Card title="Карьера" icon="briefcase" href="/career/role">
+    Роль DevOps, сертификаты, подготовка к собеседованиям.
+  </Card>
+</Columns>
+
+## Как учиться
+
+- **Идти по порядку** — разделы выстроены от основ к продвинутому.
+- **Практиковать** — после каждой темы пробовать в своей среде (VM, облако, домашний кластер).
+- **Дополнять** — добавлять сюда свои заметки, ссылки и примеры по мере обучения.
+- **Запускать локально** — `mint dev` в корне доки для превью и быстрого поиска.
+
+<Note>
+  Это живая дока: контент можно дополнять и менять под себя. Структура рассчитана на то, чтобы собирать «всё что требуется от и до» в одном месте.
+</Note>
