@@ -15,7 +15,9 @@
         "groups": [
           {
             "group": "Обзор",
-            "pages": ["index"]
+            "pages": [
+              "index"
+            ]
           },
           {
             "group": "Базовые основы",
@@ -28,11 +30,16 @@
           },
           {
             "group": "Контейнеры",
-            "pages": ["containers/docker"]
+            "pages": [
+              "containers/docker"
+            ]
           },
           {
             "group": "CI/CD",
-            "pages": ["cicd/overview", "cicd/gitlab-ci"]
+            "pages": [
+              "cicd/overview",
+              "cicd/gitlab-ci"
+            ]
           },
           {
             "group": "Kubernetes",
@@ -46,11 +53,16 @@
           },
           {
             "group": "Infrastructure as Code",
-            "pages": ["iac/terraform", "iac/ansible"]
+            "pages": [
+              "iac/terraform",
+              "iac/ansible"
+            ]
           },
           {
             "group": "Облака",
-            "pages": ["cloud/overview"]
+            "pages": [
+              "cloud/overview"
+            ]
           },
           {
             "group": "Наблюдаемость",
@@ -61,7 +73,9 @@
           },
           {
             "group": "Безопасность",
-            "pages": ["security/overview"]
+            "pages": [
+              "security/overview"
+            ]
           }
         ]
       },
@@ -70,20 +84,13 @@
         "groups": [
           {
             "group": "Kubernetes: домашние задания",
-            "pages": ["kubernetes/homework"]
+            "pages": [
+              "kubernetes/homework"
+            ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Mintlify Docs",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
