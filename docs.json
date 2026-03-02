@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "DevOps: от и до",
   "colors": {
-    "primary": "#0EA5E9",
-    "light": "#38BDF8",
-    "dark": "#0284C7"
+    "primary": "#4f46e5",
+    "light": "#6366f1",
+    "dark": "#3730a3"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -15,86 +15,13 @@
         "groups": [
           {
             "group": "Старт",
-            "pages": [
-              "index",
-              "quickstart",
-              "roadmap"
-            ]
+            "pages": ["index", "roadmap"]
           },
           {
-            "group": "Основы",
+            "group": "Kubernetes",
             "pages": [
-              "fundamentals/linux",
-              "fundamentals/git",
-              "fundamentals/scripting",
-              "fundamentals/networking"
-            ]
-          },
-          {
-            "group": "Контейнеры и оркестрация",
-            "pages": [
-              "containers/docker",
-              "containers/kubernetes"
-            ]
-          },
-          {
-            "group": "CI/CD",
-            "pages": [
-              "cicd/introduction",
-              "cicd/github-actions",
-              "cicd/gitlab-ci",
-              "cicd/jenkins"
-            ]
-          },
-          {
-            "group": "Infrastructure as Code",
-            "pages": [
-              "iac/terraform",
-              "iac/ansible"
-            ]
-          },
-          {
-            "group": "Облака",
-            "pages": [
-              "cloud/overview",
-              "cloud/aws-basics",
-              "cloud/k8s-in-cloud"
-            ]
-          },
-          {
-            "group": "Мониторинг и логи",
-            "pages": [
-              "observability/introduction",
-              "observability/prometheus-grafana",
-              "observability/logging"
-            ]
-          },
-          {
-            "group": "Безопасность",
-            "pages": [
-              "security/devsecops",
-              "security/secrets",
-              "security/scanning"
-            ]
-          },
-          {
-            "group": "Карьера",
-            "pages": [
-              "career/role",
-              "career/certifications",
-              "career/interview"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Справка",
-        "groups": [
-          {
-            "group": "О проекте",
-            "pages": [
-              "development",
-              "essentials/cheatsheets"
+              "kubernetes/lecture-01-intro",
+              "kubernetes/homework-01"
             ]
           }
         ]

@@ -1,0 +1,102 @@
+---
+title: "Kubernetes: домашка №1"
+description: "Probes, Volumes, Ingress и Helm — что нужно изучить и попробовать руками"
+icon: "check"
+---
+
+## Формулировка ДЗ
+
+Изучить и попробовать на практике:
+
+- **Probes**:
+  - livenessProbe
+  - readinessProbe
+- **Volumes** и **PersistentVolume**
+- **Ingress** и базовый networking
+- **Helm** как пакетный менеджер
+
+## План выполнения
+
+Предлагаемый порядок:
+
+1. Probes
+2. Volumes / PersistentVolume
+3. Ingress + базовый networking
+4. Helm (установка и первый чарт)
+
+## 1. Probes (liveness / readiness)
+
+Задачи для себя:
+
+- понять разницу между liveness и readiness
+- написать простой Pod/Deployment с probes
+- посмотреть, как Kubernetes реагирует на «плохие» probes
+
+Сюда можно вставить манифест/фрагмент:
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 10
+```
+
+И команды, которыми проверяешь поведение:
+
+```bash
+kubectl apply -f pod-with-probes.yaml
+kubectl describe pod pod-with-probes
+```
+
+## 2. Volumes и PersistentVolume
+
+Что нужно сделать:
+
+- понять разницу:
+  - emptyDir
+  - hostPath (аккуратно)
+  - PersistentVolume + PersistentVolumeClaim
+- собрать пример, где данные переживают перезапуск Pod
+
+Сохраняй сюда:
+
+- куски манифестов
+- команды (`kubectl get pv`, `kubectl get pvc`)
+- вывод, который считаешь важным
+
+## 3. Ingress и базовый networking
+
+Цель:
+
+- понять, как трафик доходит снаружи до сервиса/пода
+- настроить простой Ingress для приложения
+
+Полезно законспектировать:
+
+- что такое Service (ClusterIP / NodePort / LoadBalancer)
+- как они связаны с Ingress
+- пример Ingress-манифеста
+
+## 4. Helm как пакетный менеджер
+
+Цель:
+
+- установить Helm
+- поставить простой чарт (например, тот, что идёт из репозитория `bitnami` или официальный nginx)
+
+Что зафиксировать:
+
+- команды установки Helm
+- команды `helm repo add`, `helm install`, `helm upgrade`, `helm uninstall`
+- структура чарта (Chart.yaml, values.yaml, templates/)
+
+## Итоги ДЗ
+
+В конце, когда сделаешь всё выше, заполни:
+
+- что получилось хорошо
+- что было сложнее всего
+- что надо повторить / дочитать
+

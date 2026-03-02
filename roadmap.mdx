@@ -1,64 +1,95 @@
 ---
-title: "Дорожная карта"
-description: "Визуальный путь обучения DevOps от основ до карьеры"
+title: "План обучения DevOps"
+description: "Чеклист тем, которые ты хочешь освоить"
+icon: "check-double"
 ---
 
-## Обзор пути
+## Общая картина
 
-Ниже — последовательность тем от базового уровня до продвинутого. Стрелки показывают логичные зависимости: что лучше изучить перед чем.
+Эта страница — твой **чеклист по направлениям**, чтобы видеть прогресс.
 
-```
-Основы (Linux, Git, скрипты, сети)
-    ↓
-Docker → Kubernetes
-    ↓
-CI/CD (пайплайны, деплой)
-    ↓
-IaC (Terraform, Ansible) ←→ Облака (AWS и др.)
-    ↓
-Мониторинг и логи → Безопасность (DevSecOps, секреты)
-    ↓
-Карьера (роль, сертификаты, собесы)
-```
+## 1. Linux и базовые навыки
 
-## Этапы
+- Уверенное владение Linux:
+  - файловая система
+  - пакеты
+  - процессы
+  - права
+- Работа с CLI
+- Скрипты (Bash / Python)
+- Базовое понимание сетей:
+  - TCP/IP
+  - DNS
+  - HTTP/HTTPS
+  - firewall
 
-<AccordionGroup>
-  <Accordion title="1. Основы" icon="layer-group">
-    - [Linux](/fundamentals/linux): CLI, файловая система, процессы, права, systemd
-    - [Git](/fundamentals/git): ветки, merge, rebase, работа в команде
-    - [Скрипты](/fundamentals/scripting): Bash, Python для автоматизации
-    - [Сети](/fundamentals/networking): TCP/IP, DNS, HTTP, порты, firewall
-  </Accordion>
-  <Accordion title="2. Контейнеры и оркестрация" icon="box">
-    - [Docker](/containers/docker): образы, Dockerfile, docker-compose, registry
-    - [Kubernetes](/containers/kubernetes): pods, deployments, services, ingress, Helm
-  </Accordion>
-  <Accordion title="3. CI/CD" icon="arrows-rotate">
-    - [Введение в CI/CD](/cicd/introduction): цели, этапы пайплайна
-    - [GitHub Actions](/cicd/github-actions), [GitLab CI](/cicd/gitlab-ci), [Jenkins](/cicd/jenkins)
-  </Accordion>
-  <Accordion title="4. Infrastructure as Code и облака" icon="cloud">
-    - [Terraform](/iac/terraform): провайдеры, state, модули
-    - [Ansible](/iac/ansible): playbooks, роли, инвентарь
-    - [Облака](/cloud/overview), [AWS основы](/cloud/aws-basics), [K8s в облаке](/cloud/k8s-in-cloud)
-  </Accordion>
-  <Accordion title="5. Наблюдаемость и безопасность" icon="chart-line">
-    - [Мониторинг](/observability/introduction), [Prometheus/Grafana](/observability/prometheus-grafana), [Логи](/observability/logging)
-    - [DevSecOps](/security/devsecops), [Секреты](/security/secrets), [Сканирование](/security/scanning)
-  </Accordion>
-  <Accordion title="6. Карьера" icon="briefcase">
-    - [Роль DevOps](/career/role), [Сертификаты](/career/certifications), [Собеседования](/career/interview)
-  </Accordion>
-</AccordionGroup>
+## 2. Git
 
-## Время и приоритеты
+- Основные команды (init, clone, add, commit, status, log)
+- Ветвление (branch)
+- merge / rebase
+- Работа с GitHub / GitLab (remotes, PR/MR)
 
-- **Основы** — без них сложно двигаться дальше; заложи 1–3 месяца при регулярной практике.
-- **Docker + K8s** — ядро современного DevOps; ещё 2–4 месяца.
-- **CI/CD и IaC** — можно изучать параллельно с облаком; 1–2 месяца на каждое направление.
-- **Мониторинг и безопасность** — подключать по мере появления реальных проектов/лабораторок.
+## 3. Docker
 
-<Tip>
-  Не обязательно проходить всё подряд. Выбери целевой образ «первая работа в DevOps» и выстрой мини-путь: основы → контейнеры → один CI/CD → один облачный провайдер → базовый мониторинг. Остальное добивать по ходу.
-</Tip>
+- Образы (image)
+- Контейнеры (container)
+- Dockerfile
+- volumes
+- networks
+
+## 4. CI/CD
+
+- Понимание концепции CI/CD
+- GitLab CI:
+  - пайплайн: build → test → deploy
+  - основы `.gitlab-ci.yml`
+
+## 5. Kubernetes и оркестрация
+
+- Kubernetes:
+  - Pods
+  - Deployments
+  - Services
+  - Ingress
+  - ConfigMaps / Secrets
+- Helm — пакетный менеджер
+- `kubectl` и манифесты
+- Локальный кластер:
+  - kind
+  - minikube
+  - k3s
+
+## 6. IaC (Infrastructure as Code)
+
+- Terraform — стандарт де-факто
+- Ansible — конфигурация серверов
+
+## 7. Облака
+
+- Создание:
+  - виртуальных машин
+  - сетей
+  - балансировщиков
+  - хранилищ
+- Работа через:
+  - UI
+  - CLI / SDK
+  - Terraform
+- Yandex Cloud (мини-курс «облачный инженер» и аналоги)
+
+## 8. Мониторинг и логи
+
+- Prometheus + Grafana (метрики)
+- Loki / ELK / OpenSearch (логи)
+- Alertmanager — алерты
+
+## 9. Безопасность
+
+- Минимизация привилегий
+- Secrets management:
+  - Vault
+  - Kubernetes Secrets
+- Сетевые политики (NetworkPolicy в K8s)
+- SELinux / AppArmor (базово)
+
