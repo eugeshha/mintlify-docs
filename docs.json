@@ -11,22 +11,79 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Учёба",
+        "tab": "Справочник",
         "groups": [
           {
-            "group": "Старт",
-            "pages": ["index", "roadmap"]
+            "group": "Обзор",
+            "pages": ["index"]
+          },
+          {
+            "group": "Базовые основы",
+            "pages": [
+              "fundamentals/linux",
+              "fundamentals/networking",
+              "fundamentals/scripting",
+              "fundamentals/git"
+            ]
+          },
+          {
+            "group": "Контейнеры",
+            "pages": ["containers/docker"]
+          },
+          {
+            "group": "CI/CD",
+            "pages": ["cicd/overview", "cicd/gitlab-ci"]
           },
           {
             "group": "Kubernetes",
             "pages": [
-              "kubernetes/lecture-01-intro",
-              "kubernetes/homework-01"
+              "kubernetes/overview",
+              "kubernetes/probes",
+              "kubernetes/volumes",
+              "kubernetes/ingress-networking",
+              "kubernetes/helm"
             ]
+          },
+          {
+            "group": "Infrastructure as Code",
+            "pages": ["iac/terraform", "iac/ansible"]
+          },
+          {
+            "group": "Облака",
+            "pages": ["cloud/overview"]
+          },
+          {
+            "group": "Наблюдаемость",
+            "pages": [
+              "observability/prometheus-grafana",
+              "observability/logging"
+            ]
+          },
+          {
+            "group": "Безопасность",
+            "pages": ["security/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Практика",
+        "groups": [
+          {
+            "group": "Kubernetes: домашние задания",
+            "pages": ["kubernetes/homework"]
           }
         ]
       }
-    ]
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Mintlify Docs",
+          "href": "https://mintlify.com/docs",
+          "icon": "book-open-cover"
+        }
+      ]
+    }
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -36,12 +93,5 @@
     "links": []
   },
   "contextual": { "options": ["copy", "view", "chatgpt", "claude", "cursor", "vscode"] },
-  "footer": {
-    "socials": {}
-  },
-  "errors": {
-    "404": {
-      "redirect": false
-    }
-  }
+  "footer": { "socials": {} }
 }
